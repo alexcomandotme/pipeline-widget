@@ -8,12 +8,14 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html, body { background: #A8A521; }
 .pipeline {
-  padding: 16px 32px 48px 32px;
+  padding: 16px 32px 0 32px;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: visible;
   width: 100%;
+  position: relative;
+  z-index: 10;
 }
 .nodes {
   display: flex;
@@ -57,10 +59,7 @@ html, body { background: #A8A521; }
   justify-content: center;
   transition: border-color 0.2s, transform 0.2s;
 }
-.node:hover {
-  border-color: #666;
-  transform: translateY(-2px);
-}
+.node:hover { border-color: #666; transform: translateY(-2px); }
 .node svg { width: 26px; height: 26px; }
 .node-label {
   font-size: 11px;
@@ -82,7 +81,7 @@ html, body { background: #A8A521; }
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.2s;
-  z-index: 100;
+  z-index: 1000;
 }
 .node-wrap:hover .tooltip { opacity: 1; }
 .tooltip::before {
@@ -108,9 +107,20 @@ html, body { background: #A8A521; }
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   line-height: 1.5;
 }
+.hero-image {
+  width: 100%;
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+.hero-image img {
+  width: 100%;
+  display: block;
+}
 </style>
 </head>
 <body>
+
 <div class="pipeline">
   <div class="nodes">
 
@@ -219,5 +229,10 @@ html, body { background: #A8A521; }
 
   </div>
 </div>
+
+<div class="hero-image">
+  <img src="https://freight.cargo.site/t/original/i/K2962445296246589901640136207116/Screenshot-2026-05-30-at-20.34.35.png" alt="Demo" />
+</div>
+
 </body>
 </html>
