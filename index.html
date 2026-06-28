@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pipeline</title>
+<title>Operational System</title>
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html, body { background: #000000;; }
@@ -77,7 +77,7 @@ html, body { background: #000000;; }
   border: 1px solid #333;
   border-radius: 10px;
   padding: 12px 14px;
-  width: 200px;
+  width: 220px;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.2s;
@@ -123,6 +123,10 @@ html, body { background: #000000;; }
 </head>
 <body>
 
+<div style="color:#aaa; font-size:12px; text-align:center; padding-top:24px;">
+A simplified model of a coordination system for structured operational environments.
+</div>
+
 <div class="pipeline">
   <div class="nodes">
 
@@ -131,7 +135,12 @@ html, body { background: #000000;; }
         <svg viewBox="0 0 24 24" fill="none" stroke="#e05a5a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
           <path d="M7 11l-2.5 2.5 2.5 2.5M17 11l2.5 2.5-2.5 2.5M14 4l-4 16"/>
         </svg>
-        <div class="tooltip"><div class="tooltip-title">Trigger</div><div class="tooltip-body">At scale — a CRM export, a CSV drop, or a campaign brief. Any structured input becomes the entry point.</div></div>
+        <div class="tooltip">
+          <div class="tooltip-title">Trigger</div>
+          <div class="tooltip-body">
+            External event initiates the system — structured request, CRM export, or batch input. Any structured data becomes an entry point.
+          </div>
+        </div>
       </div>
       <div class="node-label">Trigger</div>
     </div>
@@ -145,9 +154,14 @@ html, body { background: #000000;; }
           <line x1="2" y1="12" x2="22" y2="12"/>
           <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
         </svg>
-        <div class="tooltip"><div class="tooltip-title">Data Enrichment</div><div class="tooltip-body">Signal resolution. Market, language, territory — pulled from CRM, CDP, or third-party APIs. No manual briefing.</div></div>
+        <div class="tooltip">
+          <div class="tooltip-title">Data Ingestion</div>
+          <div class="tooltip-body">
+            Inputs are normalized and enriched using structured external sources (APIs, CRM, internal systems). No manual interpretation.
+          </div>
+        </div>
       </div>
-      <div class="node-label">Enrichment</div>
+      <div class="node-label">Data Ingestion</div>
     </div>
 
     <div class="connector"></div>
@@ -158,9 +172,14 @@ html, body { background: #000000;; }
           <polyline points="16 18 22 12 16 6"/>
           <polyline points="8 6 2 12 8 18"/>
         </svg>
-        <div class="tooltip"><div class="tooltip-title">Content Logic</div><div class="tooltip-body">Rules engine. Message variant, tone, language, and format resolved per recipient — before a single frame is touched.</div></div>
+        <div class="tooltip">
+          <div class="tooltip-title">Rules Engine</div>
+          <div class="tooltip-body">
+            System logic defines segmentation, transformation rules, localization, and output conditions before processing begins.
+          </div>
+        </div>
       </div>
-      <div class="node-label">Logic</div>
+      <div class="node-label">Rules Engine</div>
     </div>
 
     <div class="connector"></div>
@@ -171,9 +190,14 @@ html, body { background: #000000;; }
           <circle cx="12" cy="12" r="3"/>
           <path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/>
         </svg>
-        <div class="tooltip"><div class="tooltip-title">Render Engine</div><div class="tooltip-body">Template-driven production. One master comp, infinite variants. Render farm replaces a post team for repetitive execution.</div></div>
+        <div class="tooltip">
+          <div class="tooltip-title">Processing Layer</div>
+          <div class="tooltip-body">
+            Structured inputs are transformed into outputs using deterministic templates and automated execution pipelines.
+          </div>
+        </div>
       </div>
-      <div class="node-label">Render</div>
+      <div class="node-label">Processing Layer</div>
     </div>
 
     <div class="connector"></div>
@@ -184,9 +208,14 @@ html, body { background: #000000;; }
           <path d="M12 2v13M7 11l5 5 5-5"/>
           <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/>
         </svg>
-        <div class="tooltip"><div class="tooltip-title">Asset Retrieval</div><div class="tooltip-body">Output pulled from the render layer and packaged for delivery. Format, codec, and spec resolved per channel.</div></div>
+        <div class="tooltip">
+          <div class="tooltip-title">Packaging Layer</div>
+          <div class="tooltip-body">
+            Outputs are structured into delivery-ready formats. Encoding, specification alignment, and channel formatting are resolved here.
+          </div>
+        </div>
       </div>
-      <div class="node-label">Retrieval</div>
+      <div class="node-label">Packaging Layer</div>
     </div>
 
     <div class="connector"></div>
@@ -198,7 +227,12 @@ html, body { background: #000000;; }
           <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/>
           <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
         </svg>
-        <div class="tooltip"><div class="tooltip-title">Delivery</div><div class="tooltip-body">Direct to endpoint. Ad server, email, ecom, or media buy — the asset arrives without a human in the loop.</div></div>
+        <div class="tooltip">
+          <div class="tooltip-title">Delivery</div>
+          <div class="tooltip-body">
+            Automated distribution to external endpoints (platforms, systems, or channels) with no manual execution layer.
+          </div>
+        </div>
       </div>
       <div class="node-label">Delivery</div>
     </div>
@@ -211,22 +245,32 @@ html, body { background: #000000;; }
           <polyline points="23 4 23 10 17 10"/>
           <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/>
         </svg>
-        <div class="tooltip"><div class="tooltip-title">Lifecycle</div><div class="tooltip-body">Asset retired post-delivery. Storage cleared, status locked. No orphaned files, no manual cleanup.</div></div>
+        <div class="tooltip">
+          <div class="tooltip-title">System Lifecycle</div>
+          <div class="tooltip-body">
+            Post-delivery management including versioning, archival, cleanup, and state control. Ensures system integrity at scale.
+          </div>
+        </div>
       </div>
-      <div class="node-label">Lifecycle</div>
+      <div class="node-label">System Lifecycle</div>
     </div>
 
     <div class="connector"></div>
 
     <div class="node-wrap">
-      <div class="node" style="border-color:#3a3a3a;">
+      <div class="node">
         <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
           <rect x="3" y="3" width="18" height="18" rx="3"/>
           <path d="M9 9h6M9 12h6M9 15h4"/>
         </svg>
-        <div class="tooltip"><div class="tooltip-title">DAM</div><div class="tooltip-body">Every asset logged with full metadata — recipient, market, message, timestamp. The foundation for reporting and rights management.</div></div>
+        <div class="tooltip">
+          <div class="tooltip-title">Asset Registry</div>
+          <div class="tooltip-body">
+            Central system for metadata, tracking, and structured documentation enabling auditability and full operational visibility.
+          </div>
+        </div>
       </div>
-      <div class="node-label">DAM</div>
+      <div class="node-label">Asset Registry</div>
     </div>
 
   </div>
